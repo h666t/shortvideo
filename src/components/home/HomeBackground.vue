@@ -34,30 +34,34 @@ export default {
      margin-bottom: 30px;
       margin-top: 30px;
     >img{
-      height: 215px;
-      width: 350px;
+      width: 320px;
     }
     >.number{
       position: absolute;
-      left: 25px;
-      top: 15px;
+      left: 20px;
+      top: 12px;
       color: rgb(16,45,254);
       font-weight: bold;
+      font-size: 18px;
     }
     >.title{
       position: absolute;
-      left: 70px;
-      top: 22px;
+      left: 50px;
+      top: 18px;
       color: rgb(16,45,254);
+      font-weight: bold;
+      font-size: 18px;
     }
     >.article{
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 70px;
+      top: 60px;
       width: 280px;
       line-height: 1.5;
       color: rgb(60,60,60);
+      font-size: 16px;
+      white-space: pre-wrap;
     }
 }
 </style>

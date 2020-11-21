@@ -61,74 +61,78 @@ export default {
   margin-bottom: 30px;
   position: relative;
   >img{
-    width: 350px;
-    height: 780px;
+    width: 320px;
+    height: 900px;
   }
   >.number{
     position: absolute;
-    left: 22px;
-    top: 10px;
+    left: 20px;
+    top: 12px;
     color: rgb(16,45,254);
     font-weight: bold;
+    font-size: 18px;
   }
   >.bigTitle{
     position: absolute;
-    left: 65px;
+    left: 50px;
     top: 18px;
     color: rgb(16,45,254);
     font-weight: bold;
+    font-size: 18px;
   }
   >.list{
     position: absolute;
-    left: 52px;
+    left: 46px;
     font-size: 12px;
-    top: 71px;
+    top: 83px;
     color: rgb(16,45,254);
-   >.listItem{
-     margin-bottom: 17px;
-     >.title{
-       margin-right: 20px;
-     }
-   }
+    >.listItem{
+      margin-bottom: 22px;
+      >.title{
+        margin-right: 24px;
+      }
+    }
   }
   >.productionContentTitle{
     position: absolute;
     left: 27px;
-    top: 254px;
+    top: 293px;
     font-size: 18px;
     color: rgb(16,45,254);
     font-weight: bold;
   }
   >.productionContentText{
     position: absolute;
-    left: 27px;
-    top: 270px;
+    top: 328px;
     white-space: pre-wrap;
-    width: 300px;
+    width: 280px;
     font-size: 12px;
     line-height: 1.5;
+    left: 50%;
+    transform: translateX(-50%);
   }
   >.ruleTitle{
     position: absolute;
-    left: 27px;
-    top: 510px;
+    left: 22px;
+    top: 587px;
     color: rgb(16,45,254);
     font-weight: bold;
+    font-size: 18px;
   }
   >.ruleTopic{
     position: absolute;
-    left: 70px;
-    top: 540px;
+    left: 50px;
+    top: 625px;
     color: rgb(16,45,254);
   }
   >.ruleContent{
     position: absolute;
-    width: 300px;
-    left: 30px;
-    top: 570px;
-    font-size: 12px;
-    line-height: 1.5;
+    width: 280px;
+    top: 658px;
     white-space: pre-wrap;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
   }
 }
 </style>

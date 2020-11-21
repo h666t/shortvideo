@@ -1,35 +1,34 @@
 <template>
   <div class="wrapper">
-    <img src="//i.loli.net/2020/11/21/9WugEfn2xqh4zVy.png" alt=""/>
+    <img src="//i.loli.net/2020/11/21/ZAJg5IPeKX39yiM.png" alt=""/>
     <span class="number">
         {{content.number}}
       </span>
     <span class="title">
         {{content.title}}
       </span>
-    <span class="article">
-      {{content.content}}
+    <span class="text">
+      {{content.text}}
+    </span>
+    <span class="others">
+      {{content.others}}
     </span>
   </div>
 </template>
 
 <script>
 export default {
-data(){
-  return {
-    content:{
-      number:'03',
-      title:'大赛主办方承办媒体等合作',
-      content:
-`主办方：
- 承办：威蓝全球；
- 协办（排名不分先后）：
- 专业合作院校：中国传媒大学；紫荆谷创新创业发展辅导中心；阿里商学院；上海戏剧学院；浙江传媒学院
- 特邀媒体支持：VIDEO ++, SMG`
-}
+  data(){
+    return {
+      content:{
+        number:'05',
+        title:'参赛群体',
+        text:`1.各高校在读学生及毕业一年内的毕业生
+ 2.学校代表队`,
+        others:`（参加代表队的学生可以同时以个人或团队名字重复报名）`
+      }
+    }
   }
-
-}
 }
 </script>
 
@@ -37,6 +36,8 @@ data(){
 .wrapper{
   position: relative;
   margin-bottom: 30px;
+  margin-top: 30px;
+
   >img{
     width: 320px;
   }
@@ -54,9 +55,9 @@ data(){
     top: 18px;
     color: rgb(16,45,254);
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
   }
-  >.article{
+  >.text{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -64,8 +65,18 @@ data(){
     width: 280px;
     line-height: 1.5;
     color: rgb(60,60,60);
-    white-space: pre-wrap;
     font-size: 14px;
+    white-space: pre-wrap;
+  }
+  >.others{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    line-height: 1.5;
+    color: rgb(137,137,137);
+    font-size: 14px;
+    top: 100px;
   }
 }
 </style>

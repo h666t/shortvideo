@@ -7,6 +7,8 @@
         <HomeAbout/>
     <HomeSponsor/>
     <HomeTheme/>
+    <HomeGroup/>
+    <HomeButton/>
   </div>
 </template>
 
@@ -15,8 +17,12 @@ import HomeListBackground from '@/components/home/HomeBackground'
 import HomeAbout from "@/components/home/HomeAbout"
 import HomeSponsor from "@/components/home/HomeSponsor"
 import HomeTheme from "@/components/home/HomeTheme"
+import HomeGroup from "@/components/home/HomeGroup"
+import HomeButton from "@/components/home/HomeButton"
 export default {
   components:{
+    HomeButton,
+    HomeGroup,
     HomeTheme,
     HomeAbout,
     HomeListBackground,
@@ -30,7 +36,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: darkblue;
+  background: rgb(16,45,254);
   >.header{
     >img{
       max-width: 350px;
