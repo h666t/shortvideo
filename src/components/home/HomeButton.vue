@@ -1,9 +1,19 @@
 <template>
-  <div class="wrapper">
-    <img src="//i.loli.net/2020/11/21/m9RCEOtspu5WDy3.png" alt="">
-      <div class="text">活动报名</div>
-  </div>
+  <span  class="wrapper">
+    <img @click="gotoSignup"  src="//i.loli.net/2020/11/21/m9RCEOtspu5WDy3.png" alt="">
+      <div @click="gotoSignup" class="text">活动报名</div>
+  </span>
 </template>
+
+<script>
+export default {
+  methods:{
+    gotoSignup(){
+      this.$router.push('/signup')
+    }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .wrapper{
