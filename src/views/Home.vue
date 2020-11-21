@@ -3,7 +3,9 @@
     <div class="header">
       <img src="//i.loli.net/2020/11/21/goPAW7zSrCt4VY9.png" alt="">
     </div>
-    <HomeArticle/>
+    <HomeArticle>
+      <span slot="number">1</span>
+    </HomeArticle>
   </div>
 </template>
 
