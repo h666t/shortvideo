@@ -3,30 +3,37 @@
     <div class="header">
       <img src="//i.loli.net/2020/11/21/goPAW7zSrCt4VY9.png" alt="">
     </div>
-    <HomeArticle>
-      <span slot="number">1</span>
-    </HomeArticle>
+        <HomeListBackground/>
+        <HomeAbout/>
+    <HomeSponsor/>
+    <HomeTheme/>
   </div>
 </template>
 
-<script lang="ts">
-import HomeArticle from '../components/home/HomeArticle.vue';
+<script lang="js">
+import HomeListBackground from '@/components/home/HomeBackground'
+import HomeAbout from "@/components/home/HomeAbout"
+import HomeSponsor from "@/components/home/HomeSponsor"
+import HomeTheme from "@/components/home/HomeTheme"
 export default {
-  components: {HomeArticle}
+  components:{
+    HomeTheme,
+    HomeAbout,
+    HomeListBackground,
+    HomeSponsor
+  }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss" >
 .wrapper{
-  height: 100vh ;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgb(64,122,255);
+  background: darkblue;
   >.header{
     >img{
-      width: 100vw  ;
-      border:1px solid red;
+      max-width: 350px;
     }
   }
 }
