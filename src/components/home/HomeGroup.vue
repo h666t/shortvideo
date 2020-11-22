@@ -63,7 +63,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    width: 280px;
+    width: 260px;
     line-height: 1.5;
     color: rgb(60,60,60);
     font-size: 14px;
@@ -73,7 +73,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 280px;
+    width: 260px;
     line-height: 1.5;
     color: rgb(137,137,137);
     font-size: 14px;

@@ -57,11 +57,11 @@ export default {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 60px;
-      width: 280px;
+      top: 68px;
+      width: 260px;
       line-height: 1.5;
       color: rgb(60,60,60);
-      font-size: 16px;
+      font-size: 14px;
       white-space: pre-wrap;
     }
 }

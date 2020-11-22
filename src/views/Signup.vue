@@ -19,7 +19,7 @@
           <div class="code">
             <el-form-item prop="code">
               <el-input class="input" placeholder="验证码" v-model="ruleForm.code"></el-input>
-              <el-button class="button">获取验证码</el-button>
+              <el-button size="small" class="button">获取验证码</el-button>
             </el-form-item>
           </div>
         </el-form>
@@ -102,14 +102,14 @@ export default {
 
 
     > img {
-      height: 480px;
+      height: 460px;
       margin-top: 30px;
     }
 
     > .form {
       position: absolute;
-      margin-top: 180px;
-
+      margin-top: 160px;
+      width: 300px;
       .code {
         .input {
           width: 45%;

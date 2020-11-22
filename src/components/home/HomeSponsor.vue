@@ -62,7 +62,7 @@ data(){
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    width: 280px;
+    width: 260px;
     line-height: 1.5;
     color: rgb(60,60,60);
     white-space: pre-wrap;

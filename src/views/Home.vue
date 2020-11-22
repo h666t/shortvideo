@@ -37,10 +37,10 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: $blue;
+  background: $backgroundColor;
   >.header{
     >img{
-      max-width: 350px;
+      max-width: 300px;
     }
   }
 }

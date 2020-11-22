@@ -46,7 +46,7 @@ export default {
   >.title{
     position: absolute;
     left: 50px;
-    top: 18px;
+    top: 16px;
     color: $blue;
     font-weight: bold;
     font-size: 18px;
@@ -56,11 +56,18 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     top: 55px;
-    width: 280px;
+    width: 260px;
     color: rgb(60,60,60);
-    font-size: 12px;
+    font-size: 14px;
     white-space: pre-wrap;
     line-height: 1.5;
+    height: 220px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 </style>

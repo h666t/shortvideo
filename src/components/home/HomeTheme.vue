@@ -88,9 +88,9 @@ export default {
     top: 83px;
     color: $blue;
     >.listItem{
-      margin-bottom: 22px;
+      margin-bottom: 21px;
       >.title{
-        margin-right: 24px;
+        margin-right: 18px;
       }
     }
   }
@@ -106,11 +106,19 @@ export default {
     position: absolute;
     top: 328px;
     white-space: pre-wrap;
-    width: 280px;
-    font-size: 12px;
+    width: 260px;
+    font-size: 14px;
     line-height: 1.5;
     left: 50%;
     transform: translateX(-50%);
+    height: 250px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
   }
   >.ruleTitle{
     position: absolute;
@@ -128,12 +136,19 @@ export default {
   }
   >.ruleContent{
     position: absolute;
-    width: 280px;
+    width: 260px;
+    height: 200px;
     top: 658px;
     white-space: pre-wrap;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 12px;
+    font-size: 14px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 </style>

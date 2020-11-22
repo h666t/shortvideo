@@ -21,7 +21,7 @@ export default {
   position: relative;
   margin-bottom: 30px;
     >img{
-      width: 80%;
+      width: 300px;
     }
   >.text{
     position: absolute;
