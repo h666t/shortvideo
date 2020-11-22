@@ -57,6 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/helper.scss";
 .wrapper{
   margin-bottom: 30px;
   position: relative;
@@ -68,7 +69,7 @@ export default {
     position: absolute;
     left: 20px;
     top: 12px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
     font-size: 18px;
   }
@@ -76,7 +77,7 @@ export default {
     position: absolute;
     left: 50px;
     top: 18px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
     font-size: 18px;
   }
@@ -85,7 +86,7 @@ export default {
     left: 46px;
     font-size: 12px;
     top: 83px;
-    color: rgb(16,45,254);
+    color: $blue;
     >.listItem{
       margin-bottom: 22px;
       >.title{
@@ -98,7 +99,7 @@ export default {
     left: 27px;
     top: 293px;
     font-size: 18px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
   }
   >.productionContentText{
@@ -115,7 +116,7 @@ export default {
     position: absolute;
     left: 22px;
     top: 587px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
     font-size: 18px;
   }
@@ -123,7 +124,7 @@ export default {
     position: absolute;
     left: 50px;
     top: 625px;
-    color: rgb(16,45,254);
+    color: $blue;
   }
   >.ruleContent{
     position: absolute;

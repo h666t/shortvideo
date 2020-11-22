@@ -7,7 +7,6 @@
           <el-form-item prop="name">
             <el-input placeholder="姓名" v-model="ruleForm.name"></el-input>
           </el-form-item>
-
           <el-form-item prop="email">
             <el-input placeholder="邮箱" v-model="ruleForm.email"></el-input>
           </el-form-item>
@@ -25,10 +24,13 @@
           </div>
         </el-form>
       </div>
-      <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-      <el-button @click="resetForm('ruleForm')">重置</el-button>
     </div>
-
+    <div class="submit">
+      <img src="//i.loli.net/2020/11/22/CBo9wyAKiuRU4sh.png" @click="submitForm('ruleForm')" alt="">
+    </div>
+    <div class="details">
+      <img @click="gotoVideoList" src="//i.loli.net/2020/11/22/JIM9KtyCoqnldgH.png" alt="">
+    </div>
   </div>
 </template>
 
@@ -61,6 +63,10 @@ export default {
         school: [
           {required: true, message: '请输入学校', trigger: ['blur', 'change']},
           {required: true, pattern: /^[\u2E80-\u9FFFa-zA-Z]+$/, message: '请输入正确的学校名'}
+        ],
+        code: [
+          {required: true, message: '请输入验证码', trigger: ['blur', 'change']},
+          {required: true, pattern: /^\d{4}$/, message: '验证码有误'}
         ]
       }
     };
@@ -76,17 +82,16 @@ export default {
         }
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    gotoVideoList() {
+      this.$router.push('/videolist')
     }
   }
-
 }
 </script>
 
 <style scoped lang="scss">
 .wrapper {
-  background: rgb(16, 45, 254) url("//i.loli.net/2020/11/21/Lq5ygQm4a6xFXHb.png");
+  background:  url("//i.loli.net/2020/11/21/Lq5ygQm4a6xFXHb.png");
   height: 100vh;
 
   > .formAndImg {
@@ -116,7 +121,16 @@ export default {
         }
       }
     }
+  }
 
+  > .submit, > .details {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+
+    > img {
+      width: 300px;
+    }
   }
 }
 </style>

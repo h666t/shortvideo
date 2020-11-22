@@ -34,6 +34,7 @@ data(){
 </script>
 
 <style scoped lang="scss">
+@import "~@/helper.scss";
 .wrapper{
   position: relative;
   margin-bottom: 30px;
@@ -44,7 +45,7 @@ data(){
     position: absolute;
     left: 20px;
     top: 12px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
     font-size: 18px;
   }
@@ -52,7 +53,7 @@ data(){
     position: absolute;
     left: 50px;
     top: 18px;
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bold;
     font-size: 14px;
   }

@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/helper.scss";
 .wrapper{
   position: relative;
   margin-bottom: 30px;
@@ -27,7 +28,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: rgb(16,45,254);
+    color: $blue;
     font-weight: bolder;
     font-size: 18px;
   }

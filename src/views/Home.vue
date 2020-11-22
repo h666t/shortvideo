@@ -32,11 +32,12 @@ export default {
 </script>
 
 <style scoped lang="scss" >
+@import "~@/helper.scss";
 .wrapper{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgb(16,45,254);
+  background: $blue;
   >.header{
     >img{
       max-width: 350px;

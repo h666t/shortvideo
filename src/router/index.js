@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from "@/views/Home"
 import Signup from "@/views/Signup"
+import VideoList from "@/views/VideoList"
 Vue.use(VueRouter);
 
 const routes =[
@@ -12,6 +13,10 @@ const routes =[
   {
     path: '/signup',
     component: Signup
+  },
+  {
+    path: '/videolist',
+    component: VideoList
   }
 ]
 
