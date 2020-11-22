@@ -10,12 +10,22 @@
       </button>
     </div>
     <div class="list">
-      <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto;">
-        <li v-for="i in demo" class="infinite-list-item">
+      <ul>
+        <li v-for="i in demoForShow" :key="i.id">
             <img :src="i.img" alt="">
             <h1>{{i.title}}</h1>
         </li>
       </ul>
+      <div class="pager">
+        <el-pagination class="a"
+            layout="pager"
+            :page-size='5'
+            :total="demo.length"
+            @current-change="(e)=>{changeCurrentPage(e)}"
+            :pager-count="5"
+        >
+        </el-pagination>
+      </div>
     </div>
   </div>
 </div>
@@ -32,17 +42,43 @@ export default {
           '其他内容'
       ],
       beSelectedTheme:'红色主题：建党100周年',
-      demo: [{title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'}],
+      demo: [{id:1,title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:2,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:3,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:4,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:5,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:6,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:7,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:8,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:9,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:10,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:11,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:12,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:13,title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:14,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:15,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:16,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:17,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+        {id:18,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+      ],
+      currentPage:1
+    }
+  },
+  computed:{
+    demoForShow(){
+      const demo_clone = [...this.demo]
+      const start = (this.currentPage-1)*5
+      return demo_clone.splice(start,5)
     }
   },
   methods:{
     changeTheme(theme){
       this.beSelectedTheme = theme
     },
-    load () {
-      this.demo = [...this.demo,{title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'}]
+    changeCurrentPage(e){
+      this.currentPage = e
     }
-  }
+  },
 }
 </script>
 
@@ -86,10 +122,13 @@ export default {
       flex-direction: column;
       align-items: center;
       overflow: auto;
+      >.pager{
+        display: flex;
+        justify-content: center;
+      }
       >ul{
-        height: 400px;
         >li{
-          //margin-bottom: 5px;
+          margin-bottom: 5px;
           display: flex;
           flex-direction: column;
           align-items: center;
