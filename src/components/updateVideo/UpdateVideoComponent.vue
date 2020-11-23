@@ -1,0 +1,127 @@
+<template>
+  <div class="container">
+    <el-upload class="avatar-uploader"
+               action="https://jsonplaceholder.typicode.com/posts/"
+               :on-progress="uploadVideoProcess"
+               :on-success="handleVideoSuccess"
+               :on-error="handleVideoError"
+               :before-upload="beforeUploadVideo"
+               :show-file-list="false"
+    >
+      <video v-if="videoForm.showVideoPath !=='' && !videoFlag"
+             :src="videoForm.showVideoPath"
+             class="avatar video-avatar"
+             controls="controls">
+        您的浏览器不支持视频播放
+      </video>
+      <i v-else-if="videoForm.showVideoPath ==='' && !videoFlag"
+         class="el-icon-plus avatar-uploader-icon">
+      </i>
+      <div v-if="videoForm.showVideoPath ==='' && !videoFlag"  >点击上传视频</div>
+      <el-progress v-if="videoFlag === true"
+                   type="circle"
+                   :percentage="videoUploadPercent"
+                   style="margin-top:7px;"></el-progress>
+    </el-upload>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      videoFlag: false,
+      //是否显示进度条
+      videoUploadPercent: "",
+      //进度条的进度，
+      isShowUploadVideo: false,
+      //显示上传按钮
+      videoForm: {
+        showVideoPath: ''
+      }
+    }
+  },
+  methods: {
+    //上传前回调
+    beforeUploadVideo(file) {
+      const fileSize = file.size / 1024 / 1024 < 50;
+      if (['video/mp4',  'video/avi',  'video/mov'].indexOf(file.type) === -1) {
+        this.$message.error("请上传正确的视频格式");
+        return false;
+      }
+      if (!fileSize) {
+        this.$message.error("视频大小不能超过50MB");
+        return false;
+      }
+      this.isShowUploadVideo = false;
+    },
+    //进度条
+    uploadVideoProcess(event, file, fileList) {
+      this.videoFlag = true;
+      this.videoUploadPercent = file.percentage.toFixed(0) * 1;
+    },
+    //上传成功回调
+    handleVideoSuccess(res, file) {
+      this.isShowUploadVideo = true;
+      this.videoFlag = false;
+      this.videoUploadPercent = 0;
+      //前台上传地址
+      //if (file.status == 'success' ) {
+      //    this.videoForm.showVideoPath = file.url;
+      //} else {
+      //     layer.msg("上传失败，请重新上传");
+      //}
+
+      //后台上传地址
+      // if (res.Code == 0) {
+      //   this.videoForm.showVideoPath = res.Data;
+      // } else {
+      //   layer.msg(res.Message);
+      // }
+    },handleVideoError(){
+      console.log('error')
+      this.isShowUploadVideo = true;
+      this.videoFlag = false;
+      this.videoUploadPercent = 0;
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+//.avatar-uploader .el-upload {
+//  border: 1px dashed #d9d9d9;
+//  border-radius: 6px;
+//  cursor: pointer;
+//  position: relative;
+//  overflow: hidden;
+//}
+//.avatar-uploader .el-upload:hover {
+//  border-color: #409EFF;
+//}
+.container{
+  margin-top: 15px;
+  border: 1px solid #DCDFE6;
+  height: 140px;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  >.avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+}
+
+//.avatar {
+//  width: 178px;
+//  height: 178px;
+//  display: block;
+//  border:1px solid red;
+//}
+</style>
