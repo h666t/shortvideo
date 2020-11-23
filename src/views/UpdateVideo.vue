@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" >
     <img src="//i.loli.net/2020/11/23/dUWybcguDAlXZiV.png" alt="">
     <div class="content">
       <el-input
@@ -22,7 +22,12 @@
       >
       </el-input>
 
-      <UpdateVideoComponent/>
+      <UpdateVideoComponent
+          :videoUploadPercent.sync="videoUploadPercent"
+          :isShowUploadVideo.sync="isShowUploadVideo"
+          :videoForm.sync="videoForm"
+          :videoFlag.sync="videoFlag"
+      />
 
     </div>
   </div>
@@ -36,7 +41,15 @@ export default {
     return {
       text: '',
       textarea: '',
-
+      videoFlag: false,
+      //是否显示进度条
+      videoUploadPercent: 0,
+      //进度条的进度，
+      isShowUploadVideo: false,
+      //显示上传按钮
+      videoForm: {
+        showVideoPath: ''
+      }
     }
   },
 

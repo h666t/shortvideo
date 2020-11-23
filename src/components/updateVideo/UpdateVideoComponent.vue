@@ -28,17 +28,18 @@
 
 <script>
 export default {
-  data(){
-    return {
-      videoFlag: false,
-      //是否显示进度条
-      videoUploadPercent: "",
-      //进度条的进度，
-      isShowUploadVideo: false,
-      //显示上传按钮
-      videoForm: {
-        showVideoPath: ''
-      }
+  props:{
+    videoUploadPercent:{
+      type: Number
+    },
+    isShowUploadVideo:{
+      type: Boolean
+    },
+    videoForm:{
+      type:Object
+    },
+    videoFlag:{
+      type:Boolean
     }
   },
   methods: {
@@ -53,18 +54,18 @@ export default {
         this.$message.error("视频大小不能超过50MB");
         return false;
       }
-      this.isShowUploadVideo = false;
+      this.$emit('update:isShowUploadVideo',false)
     },
     //进度条
     uploadVideoProcess(event, file, fileList) {
-      this.videoFlag = true;
-      this.videoUploadPercent = file.percentage.toFixed(0) * 1;
+      this.$emit('update:videoFlag',true)
+      this.$emit('update:videoUploadPercent',file.percentage.toFixed(0) * 1)
     },
     //上传成功回调
     handleVideoSuccess(res, file) {
-      this.isShowUploadVideo = true;
-      this.videoFlag = false;
-      this.videoUploadPercent = 0;
+      this.$emit('update:isShowUploadVideo',true)
+      this.$emit('update:videoFlag',false)
+      this.$emit('update:videoUploadPercent',0)
       //前台上传地址
       //if (file.status == 'success' ) {
       //    this.videoForm.showVideoPath = file.url;
@@ -79,10 +80,9 @@ export default {
       //   layer.msg(res.Message);
       // }
     },handleVideoError(){
-      console.log('error')
-      this.isShowUploadVideo = true;
-      this.videoFlag = false;
-      this.videoUploadPercent = 0;
+      this.$emit('update:isShowUploadVideo',true)
+      this.$emit('update:videoFlag',false)
+      this.$emit('update:videoUploadPercent',0)
     }
   }
 }
