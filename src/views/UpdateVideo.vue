@@ -13,6 +13,7 @@
           :videoForm.sync="videoForm"
           :videoFlag.sync="videoFlag"
       />
+      <UpdateVideoUpdateImages/>
     </div>
   </div>
 </template>
@@ -20,8 +21,9 @@
 <script>
 import UpdateVideoComponent from "@/components/updateVideo/UpdateVideoComponent"
 import UpdateVideoHeader from '@/components/updateVideo/UpdateVideoHeader'
+import UpdateVideoUpdateImages from "@/components/updateVideo/UpdateVideoUpdateImages"
 export default {
-  components:{UpdateVideoComponent,UpdateVideoHeader},
+  components:{UpdateVideoComponent,UpdateVideoHeader,UpdateVideoUpdateImages},
   data() {
     return {
       text: '',
