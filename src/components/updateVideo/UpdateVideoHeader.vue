@@ -1,0 +1,46 @@
+<template>
+  <div>
+    <el-input
+        type="text"
+        placeholder="输入视频标题"
+        @input="(e)=>{changeText(e)}"
+        maxlength="20"
+        show-word-limit
+        :value="text"
+    >
+    </el-input>
+    <div style="margin: 20px 0;"></div>
+    <el-input
+        type="textarea"
+        placeholder="输入视频概述（200字以内）"
+        @input="(e)=>{changeTextarea(e)}"
+        maxlength="200"
+        show-word-limit
+        resize="none"
+        rows="5"
+        :value="textarea"
+    >
+    </el-input>
+  </div>
+</template>
+
+<script>
+export default {
+  props:{
+    text:{
+      type:String
+    },
+    textarea:{
+      type:String
+    }
+  },
+  methods:{
+    changeText(value){
+      this.$emit('update:text',value)
+    },
+    changeTextarea(value){
+      this.$emit('update:textarea',value)
+    }
+  }
+}
+</script>

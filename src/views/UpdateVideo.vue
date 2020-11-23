@@ -2,25 +2,10 @@
   <div class="wrapper" >
     <img src="//i.loli.net/2020/11/23/dUWybcguDAlXZiV.png" alt="">
     <div class="content">
-      <el-input
-          type="text"
-          placeholder="输入视频标题"
-          v-model="text"
-          maxlength="20"
-          show-word-limit
-      >
-      </el-input>
-      <div style="margin: 20px 0;"></div>
-      <el-input
-          type="textarea"
-          placeholder="输入视频概述（200字以内）"
-          v-model="textarea"
-          maxlength="200"
-          show-word-limit
-          resize="none"
-          rows="5"
-      >
-      </el-input>
+      <UpdateVideoHeader
+        :text.sync="text"
+        :textarea.sync="textarea"
+      />
 
       <UpdateVideoComponent
           :videoUploadPercent.sync="videoUploadPercent"
@@ -28,15 +13,15 @@
           :videoForm.sync="videoForm"
           :videoFlag.sync="videoFlag"
       />
-
     </div>
   </div>
 </template>
 
 <script>
 import UpdateVideoComponent from "@/components/updateVideo/UpdateVideoComponent"
+import UpdateVideoHeader from '@/components/updateVideo/UpdateVideoHeader'
 export default {
-  components:{UpdateVideoComponent},
+  components:{UpdateVideoComponent,UpdateVideoHeader},
   data() {
     return {
       text: '',
