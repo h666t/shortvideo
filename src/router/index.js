@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from "@/views/Home"
 import Signup from "@/views/Signup"
 import VideoList from "@/views/VideoList"
+import UpdateVideo from "@/views/UpdateVideo"
 Vue.use(VueRouter);
 
 const routes =[
@@ -17,6 +18,10 @@ const routes =[
   {
     path: '/videolist',
     component: VideoList
+  },
+  {
+    path: '/updatevideo',
+    component: UpdateVideo
   }
 ]
 

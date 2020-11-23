@@ -31,6 +31,9 @@
     <div class="details">
       <img @click="gotoVideoList" src="//i.loli.net/2020/11/22/JIM9KtyCoqnldgH.png" alt="">
     </div>
+    <div style="display: flex;justify-content: center; margin-top: 10px">
+      <button @click="gotoUpdateVideo" style="">fakeSignup</button>
+    </div>
   </div>
 </template>
 
@@ -69,7 +72,7 @@ export default {
           {required: true, pattern: /^\d{4}$/, message: '验证码有误'}
         ]
       }
-    };
+    }
   },
   methods: {
     submitForm(formName) {
@@ -84,6 +87,9 @@ export default {
     },
     gotoVideoList() {
       this.$router.push('/videolist')
+    },
+    gotoUpdateVideo(){
+      this.$router.push('/updatevideo')
     }
   }
 }
