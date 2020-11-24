@@ -49,11 +49,11 @@ export default {
         showVideoPath: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       coverFileList:[
-        // {
-        //   url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        //   status: 'uploading',
-        //   message: '上传中...',
-        // },
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          status: 'uploading',
+          message: '上传中...',
+        },
       ],
       stagePhotoFileList:[]
     }

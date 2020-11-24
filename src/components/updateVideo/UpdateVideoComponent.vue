@@ -9,9 +9,9 @@
                :show-file-list="false"
     >
       <video v-if="videoForm.showVideoPath !=='' && !videoFlag"
-             :src="videoForm.showVideoPath"
              class="avatar video-avatar"
              controls="controls">
+        <source :src="videoForm.showVideoPath"/>
         您的浏览器不支持视频播放
       </video>
 
