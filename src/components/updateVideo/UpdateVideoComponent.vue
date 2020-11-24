@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :class="videoForm.showVideoPath !=='' ? 'hasvideo' : undefined">
     <el-upload class="avatar-uploader"
                action="https://jsonplaceholder.typicode.com/posts/"
                :on-progress="uploadVideoProcess"
@@ -103,11 +103,16 @@ export default {
   margin-top: 15px;
   border: 1px solid #DCDFE6;
   height: 140px;
+  width: 280px;
   background: white;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  &.hasvideo{
+    border: none;
+    background: transparent;
+  }
   >.avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
@@ -118,10 +123,11 @@ export default {
   }
 }
 
-//.avatar {
-//  width: 178px;
-//  height: 178px;
-//  display: block;
-//  border:1px solid red;
-//}
+.avatar {
+  max-height: 135px;
+  max-width: 280px;
+  display: block;
+  border-radius: 14px;
+}
 </style>
+

@@ -46,7 +46,7 @@ export default {
       isShowUploadVideo: false,
       //显示上传按钮
       videoForm: {
-        showVideoPath: ''
+        showVideoPath: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       coverFileList:[
         // {
