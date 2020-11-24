@@ -14,15 +14,24 @@
              controls="controls">
         您的浏览器不支持视频播放
       </video>
+
       <i v-else-if="videoForm.showVideoPath ==='' && !videoFlag"
-         class="el-icon-plus avatar-uploader-icon">
+         class="avatar-uploader-icon">
+        <span class="el-icon-plus "> </span>
+        <span>点击上传视频</span>
       </i>
-      <div v-if="videoForm.showVideoPath ==='' && !videoFlag"  >点击上传视频</div>
       <el-progress v-if="videoFlag === true"
                    type="circle"
                    :percentage="videoUploadPercent"
                    style="margin-top:7px;"></el-progress>
     </el-upload>
+    <el-button
+        v-if="videoForm.showVideoPath"
+        class="deleteVideo"
+        type="danger"
+        icon="el-icon-delete" circle size="mini"
+        @click="removeVideoPath"
+    ></el-button>
   </div>
 </template>
 
@@ -83,12 +92,16 @@ export default {
       this.$emit('update:isShowUploadVideo',true)
       this.$emit('update:videoFlag',false)
       this.$emit('update:videoUploadPercent',0)
+    },
+    removeVideoPath(){
+      this.$emit('update:videoForm',{showVideoPath:''})
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+@import "~@/helper.scss";
 //.avatar-uploader .el-upload {
 //  border: 1px dashed #d9d9d9;
 //  border-radius: 6px;
@@ -113,13 +126,29 @@ export default {
     border: none;
     background: transparent;
   }
-  >.avatar-uploader-icon {
-    font-size: 28px;
+  .avatar-uploader-icon {
+    font-size: 14px;
     color: #8c939d;
-    width: 178px;
-    height: 178px;
+    height: 140px;
+    width: 280px;
     line-height: 178px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    >span{
+      font-style: normal;
+    }
+  }
+  >.deleteVideo{
+    position: absolute;
+    right: 18px;
+    top: 185px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
