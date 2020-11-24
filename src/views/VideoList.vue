@@ -11,7 +11,7 @@
     </div>
     <div class="list">
       <ul>
-        <li v-for="i in demoForShow" :key="i.id">
+        <li @click="gotoVideoDetail" v-for="i in demoForShow" :key="i.id">
             <img :src="i.img" alt="">
             <h1>{{i.title}}</h1>
         </li>
@@ -54,12 +54,12 @@ export default {
             {id:10,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
             {id:11,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
             {id:12,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:13,title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:14,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:15,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:16,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:17,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
-        {id:18,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:13,title:'demo11111111111111111111111111111111111111111111111',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:14,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:15,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:16,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:17,title:'demo',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
+            {id:18,title:'demo2',img:'//i.loli.net/2020/11/22/P5AqxEclZpnwaGS.png'},
       ],
       currentPage:1
     }
@@ -77,6 +77,9 @@ export default {
     },
     changeCurrentPage(e){
       this.currentPage = e
+    },
+    gotoVideoDetail(){
+      this.$router.push('/videodetail/1')
     }
   },
 }

@@ -4,6 +4,7 @@ import Home from "@/views/Home"
 import Signup from "@/views/Signup"
 import VideoList from "@/views/VideoList"
 import UpdateVideo from "@/views/UpdateVideo"
+import VideoDetail from "@/views/VideoDetail"
 Vue.use(VueRouter);
 
 const routes =[
@@ -22,6 +23,10 @@ const routes =[
   {
     path: '/updatevideo',
     component: UpdateVideo
+  },
+  {
+    path: '/videodetail/:id',
+    component: VideoDetail
   }
 ]
 
