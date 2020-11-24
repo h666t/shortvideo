@@ -13,7 +13,18 @@
           :videoForm.sync="videoForm"
           :videoFlag.sync="videoFlag"
       />
-      <UpdateVideoUpdateImages/>
+      <UpdateVideoUpdateImages
+          title='上传视频封面'
+          :file-list.sync="coverFileList"
+          :maxCount="1"
+          :maxSize="500 * 1024"
+      />
+      <UpdateVideoUpdateImages
+          title='上传剧照'
+          :file-list.sync="stagePhotoFileList"
+          :maxCount="3"
+          :maxSize="500 * 1024"
+      />
     </div>
   </div>
 </template>
@@ -21,7 +32,7 @@
 <script>
 import UpdateVideoComponent from "@/components/updateVideo/UpdateVideoComponent"
 import UpdateVideoHeader from '@/components/updateVideo/UpdateVideoHeader'
-import UpdateVideoUpdateImages from "@/components/updateVideo/UpdateVideoUpdateImages"
+import UpdateVideoUpdateImages from "@/components/updateVideo/public/UpdateVideoUpdateImages"
 export default {
   components:{UpdateVideoComponent,UpdateVideoHeader,UpdateVideoUpdateImages},
   data() {
@@ -36,7 +47,15 @@ export default {
       //显示上传按钮
       videoForm: {
         showVideoPath: ''
-      }
+      },
+      coverFileList:[
+        // {
+        //   url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        //   status: 'uploading',
+        //   message: '上传中...',
+        // },
+      ],
+      stagePhotoFileList:[]
     }
   },
 
