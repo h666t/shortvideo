@@ -3,12 +3,12 @@
   <img src="//i.loli.net/2020/11/25/r1yIYuzLxJ3AX7G.png" alt="">
   <div class="header">
     <h1>{{detail.title}}</h1>
-    <div class="video">
+    <div class="video" >
       <video
           ref="video"
           :poster="detail.cover"
           controls>
-        <source :src="detail.src"/>
+        <source :src="detail.src" />
         您的浏览器不支持视频播放
       </video>
     </div>
@@ -31,6 +31,7 @@ props:{
 @import "~@/helper.scss";
 
 .wrapper {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   background: $backgroundColor;
